@@ -1,11 +1,11 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { useAnyImage } from 'src/hooks';
+import { useResponsiveImage } from 'src/hooks';
 import { AspectRatio } from 'src/components';
 
 const Picture = ({ relativePath, fadeIn, durationFadeIn, alt, className, style, loading, draggable }) => {
-  // useAnyImageの返り値のdesktopImageとmobileImageを分割代入で取り出す
-  const { mobileImage, desktopImage } = useAnyImage(relativePath);
+  // useResponsiveImageの返り値のdesktopImageとmobileImageを分割代入で取り出す
+  const { mobileImage, desktopImage } = useResponsiveImage(relativePath);
 
   //mobileImageとdesktopImageが存在する時にmediaを追加したobjectを作る
   //どちらもない場合はdesktopImageを返す

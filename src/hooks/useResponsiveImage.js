@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 
-const useAnyImage = (relativePath) => {
+const useResponsiveImage = (relativePath) => {
   // desktopImages
   // 全ての画像から拡張子png,jpg,jpeg、ファイル名の先頭にsp_が付いていない画像の配列
   // mobileImages
@@ -70,4 +70,4 @@ const useAnyImage = (relativePath) => {
   };
 };
 
-export default useAnyImage;
+export default useResponsiveImage;
