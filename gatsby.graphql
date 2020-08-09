@@ -626,7 +626,6 @@ type SitePluginGroupConnection {
 }
 
 type SitePluginPackageJson {
-  author: String
   dependencies: [SitePluginPackageJsonDependencies]
   description: String
   devDependencies: [SitePluginPackageJsonDevDependencies]
@@ -1480,7 +1479,6 @@ enum SitePageFieldsEnum {
   pluginCreator___internal___type
   pluginCreator___name
   pluginCreator___nodeAPIs
-  pluginCreator___packageJson___author
   pluginCreator___packageJson___dependencies
   pluginCreator___packageJson___dependencies___name
   pluginCreator___packageJson___dependencies___version
@@ -1569,7 +1567,6 @@ enum SitePluginFieldsEnum {
   internal___type
   name
   nodeAPIs
-  packageJson___author
   packageJson___dependencies
   packageJson___dependencies___name
   packageJson___dependencies___version
@@ -1976,7 +1973,6 @@ input SitePluginPackageJsonDevDependenciesFilterListInput {
 }
 
 input SitePluginPackageJsonFilterInput {
-  author: StringQueryOperatorInput
   dependencies: SitePluginPackageJsonDependenciesFilterListInput
   description: StringQueryOperatorInput
   devDependencies: SitePluginPackageJsonDevDependenciesFilterListInput
