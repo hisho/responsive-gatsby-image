@@ -22,52 +22,58 @@ const Picture = ({ relativePath, fadeIn, durationFadeIn, alt, className, style, 
 
   return (
     <>
-      {//sourceがある時の処理
+      {
+        //sourceがある時の処理
         source ? (
-        <div className='relative'>
-          {//mobileImageがある時の処理
-            mobileImage && (
-            <AspectRatio
-              className='test-none'
-              width={mobileImage.presentationWidth}
-              height={mobileImage.presentationHeight}
-            />
-          )}
+          <div className='relative'>
+            {
+              //mobileImageがある時の処理
+              mobileImage && (
+                <AspectRatio
+                  className='test-none'
+                  width={mobileImage.presentationWidth}
+                  height={mobileImage.presentationHeight}
+                />
+              )
+            }
 
-          {//desktopImageがある時の処理
-            desktopImage && (
-            <AspectRatio
-              className={mobileImage && `hidden test-block`}
-              width={desktopImage.presentationWidth}
-              height={desktopImage.presentationHeight}
-            />
-          )}
+            {
+              //desktopImageがある時の処理
+              desktopImage && (
+                <AspectRatio
+                  className={mobileImage && `hidden test-block`}
+                  width={desktopImage.presentationWidth}
+                  height={desktopImage.presentationHeight}
+                />
+              )
+            }
 
-          <Img
-            fluid={source}
-            style={style}
-            className={`img ${className ?? ''}`}
-            alt={alt}
-            fadeIn={fadeIn}
-            durationFadeIn={durationFadeIn}
-            loading={loading}
-            draggable={draggable}
-          />
-        </div>
-      ) : (
-        <div>
-          <span style={{color: 'red'}}>
-            エラー<span style={{ fontWeight: "bold" }}>"{relativePath}"</span>
-            は存在しません。
-          </span>
-          <br />
-          ogp.pngの様に指定してください。
-          <br />
-          または
-          <br />
-          common/ogp.pngの様に指定してください。
-        </div>
-      )}
+            <Img
+              fluid={source}
+              style={style}
+              className={`img ${className ?? ''}`}
+              alt={alt}
+              fadeIn={fadeIn}
+              durationFadeIn={durationFadeIn}
+              loading={loading}
+              draggable={draggable}
+            />
+          </div>
+        ) : (
+          <div>
+            <span style={{ color: 'red' }}>
+              エラー<span style={{ fontWeight: 'bold' }}>"{relativePath}"</span>
+              は存在しません。
+            </span>
+            <br />
+            ogp.pngの様に指定してください。
+            <br />
+            または
+            <br />
+            common/ogp.pngの様に指定してください。
+          </div>
+        )
+      }
     </>
   );
 };
